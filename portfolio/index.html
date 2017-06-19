@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preferred Home Improvement</title>
+  <meta name="description" content="Roofing, Siding and Windows Home Improvement Company based in Langhorne, PA" />
+  <meta name="keywords" content="Preferred, Home, Improvement, Roofing, Siding, Windows, Langhorne, Bucks County, PA, Pennsylvania" />
+  <meta name="author" content="CrystalFruit" />
+  <link rel="icon" href="../assets/icon.png">
+  <!-- CSS Styles -->
+  <link rel='stylesheet' href='../css/bootstrap.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  <!-- For modals -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+  <script src="https://rawgit.com/hammerjs/hammer.js/v2.0.8/hammer.min.js"></script>
+
+  <script src="../dist/ng-image-gallery.min.js"></script>
+  <link href="../dist/ng-image-gallery.min.css" rel="stylesheet"/>
+  <script type="text/javascript" src="./js/main.js"></script>
+
+
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/carousel.css">
+  <link rel="stylesheet" href="./portfolio.css">
+</head>
+
+<body ng-controller="main">
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href=".."><img src="../assets/logo.jpg" class="navbar-logo-image" /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden active">
+                        <a href="#page-top" class="page-scroll"></a>
+                    </li>
+                    <li class="">
+                        <a href="../services">Services</a>
+                    </li>
+                    <li class="">
+                        <a href=".">Portfolio</a>
+                    </li>
+                    <li class="">
+                        <a href="../specialoffers">Special Offers</a>
+                    </li>
+                    <li class="">
+                        <a href="../testimonials">Testimonials</a>
+                    </li>
+                    <li class="">
+                        <a href="../contact">Contact</a>
+                    </li>
+                    <li class="">
+                        <a href="tel:+1-855-766-2345"><span style="color: #38A2EE"> 855-766-2345</span></a>
+                    </li>
+                    <li class="">
+                        <a><span> Langhorne, PA</span></a>
+                    </li>
+                </ul>
+            </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- Header -->
+  <!-- <header>
+    <div id="page-top" class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">Preferred Home Improvement</div>
+        <div class="intro-heading">Roofing, Siding &amp; Windows</div>
+        <div class="intro-lead-in" style="font-size: 14pt">Servicing Bucks County, PA for the past 15 years</div>
+        <a href="#contact" class="page-scroll btn btn-xl">Get a Free Quote Today</a>
+        <br>
+        <br>
+        <a href="#services-stop" class="page-scroll"><i class="fa fa-chevron-down animated infinite pulse"></i></a>
+      </div>
+    </div>
+    <div id="services-stop" class="pro-triangle-1"></div>
+  </header> -->
+
+  <!-- Portfolio Grid Section -->
+  <section id="portfolio" class="bg-light-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Portfolio</h2>
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a ng-click="openGallery(0)" class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="./images/pj1/first.jpg" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Roofing and Vinyl Siding</h4>
+          </div>
+        </div>
+
+        <div ng-click="openGallery(4)" class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="./images/pj2/first.jpg" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Standing Seam Metal Roofing</h4>
+          </div>
+        </div>
+        <div ng-click="openGallery(8)" class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="./images/pj3/before.jpg" class="img-responsive port-img" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Metal Slate Roof, Standing Seam Metal, Vinyl Shutters</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Second row -->
+      <div class="row">
+        
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a ng-click="openGallery(10)" class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="./images/pj4/first.jpg" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Asphalt Roofing, Vinyl Siding</h4>
+          </div>
+        </div>
+
+        <div ng-click="openGallery(14)" class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="./images/pj5/first.jpg" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Asphalt Roofing, Vinyl Siding</h4>
+          </div>
+        </div>
+        <div ng-click="openGallery(17)" class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="./images/pj6/first.jpg" class="img-responsive port-img" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Asphalt Roofing, Vinyl Siding</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+  <div>    
+    <br/>
+    <br/>
+    <br/>
+
+    <ng-image-gallery images="images" methods="methods" conf="conf" thumbnails="thumbnails" inline="inline" bubbles="bubbles" img-bubbles="imgBubbles" bg-close="bgClose" on-open="opened();" on-close="closed();" bg-close="false"></ng-image-gallery>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <span class="copyright">Preferred Home Improvement &copy; 2016</span>
+        </div>
+<!--         <div class="col-md-4">
+          <ul class="list-inline social-buttons">
+            <li><a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+            <li><a href="#">Privacy Policy</a>
+            </li>
+            <li><a href="#">Terms of Use</a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          Designed with<img src="../images/cftp.png" title="CrystalFruit, LLC - A Digital Solutions Company" alt="CrystalFruit, LLC - A Digital Solutions Company" style="margin-top:-7px;width:30px"> by CrystalFruit
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+</body>
+
+</html>

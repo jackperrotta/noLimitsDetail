@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+	<head>
+		<title>ng-image-gallery</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<!-- Local Dependencies -->
+		<!-- <script src="../bower_components/angular/angular.js"></script>
+		<script src="../bower_components/angular-animate/angular-animate.js"></script>
+		<script src="../bower_components/hammerjs/hammer.min.js"></script> -->
+
+		<!-- Dependencies -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+		<script src="https://rawgit.com/hammerjs/hammer.js/v2.0.8/hammer.min.js"></script>
+
+		<!-- Module files-->
+		<script src="../dist/ng-image-gallery.min.js"></script>
+		<link href="../dist/ng-image-gallery.min.css" rel="stylesheet"/>
+	</head>
+	<body ng-controller="main">
+		<a href="./cur.html">Home</a><br/>
+
+		<h1>
+			<a href="https://github.com/thatisuday/ng-image-gallery" style="text-decoration:none; color:#333;">
+				ng-image-gallery
+			</a>
+		</h1>
+		
+		<p>Instead of using <b>inline attributes</b> to set options, you just set up <i>conf="conf"</i> where <i>conf</i> is object bound to the scope with following boolean properties.</p>
+
+		<br/>
+
+		<div>
+			<div ng-repeat="(key, value) in conf">
+				<label><input type="checkbox" ng-model="conf[key]"/> {{key}}</label>
+			</div>
+		</div>
+
+		<br/>
+
+		<button ng-click="openGallery()">Open Gallery</button>
+		<button ng-click="addPhoto()">Add Photo</button>
+		<button ng-click="removePhoto()">Remove Photo</button>
+		
+		<br/>
+		<br/>
+
+		<br/>
+		<br/>
+
+		<ng-image-gallery images="images" methods="methods" conf="conf" on-open="opened();" on-close="closed();"></ng-image-gallery>
+
+		<script>
+			angular
+			.module('demo', ['thatisuday.ng-image-gallery'])
+			.controller('main', function($scope, $timeout, $interval){
+				// Local images
+				$scope.images = [
+					{
+						url : './images/pj1/first.jpg',
+						thumbUrl : './images/pj1/first.jpg',
+						bubbleUrl : './images/pj1/first.jpg',
+						extUrl : 'http://google.com/image/1'
+					},
+					{
+						url : './images/pj1/first.jpg',
+						thumbUrl : './images/pj1/first.jpg',
+						bubbleUrl : './images/pj1/first.jpg',
+					}
+				];
+
+				/*****************************************************/
+
+				// configurations
+				// $scope.conf = {
+				// 	thumbnails 	: 	true,	
+				// 	inline		: 	false,
+				// 	bubbles		: 	true,
+				// 	imgBubbles 	: 	true,	
+				// 	bgClose		: 	false
+				// };
+				$scope.conf = {
+					thumbnails 	: 	false,	
+					inline		: 	false,
+					bubbles		: 	false,
+					imgBubbles 	: 	false,	
+					bgClose		: 	false
+				};
+
+
+				// Gallery methods gateway
+				$scope.methods = {};
+				$scope.openGallery = function(){
+					$scope.methods.open();
+				};
+				
+
+				// Gallery callbacks
+				$scope.opened = function(){
+					console.info('Gallery opened!');
+				}
+
+				$scope.closed = function(){
+					console.warn('Gallery closed!');
+				}
+			});
+		</script>
+	</body>
+</html>
